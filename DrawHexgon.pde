@@ -1,6 +1,6 @@
 class DrawHexagon {
-  float kerroinX = ((4*sqrt(65))/13)*8;
-  float kerroinY = ((4*sqrt(65))/13)*14;
+  float kerroinX = (((4f*sqrt(65f))/13f)*8f);
+  float kerroinY = (((4f*sqrt(65f))/13f)*14f);
 
 
   void draw() 

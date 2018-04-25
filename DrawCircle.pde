@@ -22,7 +22,7 @@ class DrawCircle {
           {
             ellipse(j, i, kerroinX, kerroinY);
           }
-          i-=kerroinY*2;
+          i-=separation*2;
         }
         else
         {
@@ -30,12 +30,11 @@ class DrawCircle {
           {
             ellipse(j, i-kerroinY, kerroinX, kerroinY);
           }
-          i-=kerroinY*2;
+          i-=separation*2;
         }
       }
       paired = !paired;
-      j-=kerroinX;
-      i-=kerroinY;
+      j-=separation;
     }
     return; //<>//
   }

@@ -1,24 +1,33 @@
 float distance = 50f;
+float separation = 40f;
 boolean drawOnly = true;
 boolean drawSphereBool = false;
 int a = 64;
 int c = 0;
 int corners = 4;
 int timeout = 0;
+DrawOctagon drawOctagon;
+DrawHeptagon drawHeptagon;
 DrawHexagon drawHexagon;
-DrawSquare drawSquare;
 DrawPentagon drawPentagon;
+DrawSquare drawSquare;
+DrawTriangle drawTriangle;
 DrawCircle drawCircle;
+KeyHandler keyHandler;
 
 void setup() 
 {
  size(1270, 720);
  colorMode(HSB);
  background(240, 24.14, 11.37);
+ drawOctagon = new DrawOctagon();
+ drawHeptagon = new DrawHeptagon();
  drawHexagon = new DrawHexagon();
- drawSquare = new DrawSquare();
- drawCircle = new DrawCircle();
  drawPentagon = new DrawPentagon();
+ drawSquare = new DrawSquare();
+ drawTriangle = new DrawTriangle();
+ drawCircle = new DrawCircle();
+ keyHandler = new KeyHandler();
 }
 
 void draw() 
@@ -42,7 +51,10 @@ void drawCall()
     switch (corners) 
     {
       case 3:
+      {
+        drawTriangle.draw();
         break;
+      }
       case 4:
         drawSquare.draw();
         break;
@@ -50,107 +62,25 @@ void drawCall()
         drawPentagon.draw();
         break;
       case 6:
+      {
         drawHexagon.draw();
         break;
+      }
+      case 7:
+      {
+        drawHeptagon.draw();
+        break;
+      }
+      case 8:
+      {
+        drawOctagon.draw();
+        break;
+      }
     }
   }  
 }
 
 void keyPressed() 
 {
-  if (key == 'u' || key == 'U')
-  {
-    if (distance >= 10f) 
-    {
-      distance -= 10f;
-      return;
-    }
-    else if (distance == 0f) 
-    {
-      drawOnly = false;
-      return;
-    }
-    else 
-    {
-      return;
-    }
-  }
-  if (key == 'i' || key == 'i')
-  {
-    if (!drawOnly) 
-    {
-      drawOnly = true;
-      distance += 10f;
-      return; 
-    }
-    else if (width > distance) 
-    {
-      distance += 10f;
-      return;
-    }
-    else 
-    {
-      return;
-    }
-  }
-  if (key == 'm' || key == 'M')
-  {
-    if (a >= 240)
-    {
-      return;
-    }
-    else
-    {
-      a += 16;
-      return;
-    }
-  }
-  if (key == 'n' || key == 'N')
-  {
-    if (a >= 16)
-    {
-      a -= 16;
-      return;
-    }
-    else
-    {
-      return;
-    }
-  }
-  if (key == '-')
-  {
-   if (corners > 3)
-   {
-     corners--;
-     return;
-   }
-   else
-   {
-     return;
-   }
-  }
-  if (key == '+')
-  {
-   if (corners < 8)
-   {
-     corners++;
-     return;
-   }
-   else
-   {
-     return;
-   }
-  }
-  if (key == 'd')
-  {
-   if (timeout == 0)
-   {
-     drawSphereBool = !drawSphereBool;
-     return;
-   }
-   else
-   {
-     return; 
-   }
-  }
+  keyHandler.call();
 }

@@ -25,8 +25,8 @@ class DrawSquare {
         }
       }
       paired = !paired;
-      j-=kerroinX+10;
-      i-=kerroinY+10;
+      j-=separation+10;
+      i-=separation+10;
     }
     return;
   }
