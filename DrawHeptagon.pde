@@ -1,4 +1,4 @@
-class DrawTriangle {
+class DrawHeptagon {
   float kerroinX = ((4*sqrt(65))/13)*8;
   float kerroinY = ((4*sqrt(65))/13)*14;
 
@@ -6,7 +6,7 @@ class DrawTriangle {
   void draw() 
   {
     fill(c, 255, 255, 255);
-    text("Tirangles not yet available", width/2, height/2);
+    text("Heptagons not yet available", width/2, height/2);
     noFill();
     return; /*
     float j = width;
