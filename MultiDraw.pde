@@ -2,6 +2,7 @@ float distance = 50f;
 float separation = 40f;
 boolean drawOnly = true;
 boolean drawSphereBool = false;
+boolean helpMe = false;
 int a = 64;
 int c = 0;
 int corners = 8;
@@ -14,6 +15,7 @@ DrawSquare drawSquare;
 DrawTriangle drawTriangle;
 DrawCircle drawCircle;
 KeyHandler keyHandler;
+DrawHelp drawHelp;
 
 void setup() 
 {
@@ -28,6 +30,7 @@ void setup()
  drawTriangle = new DrawTriangle();
  drawCircle = new DrawCircle();
  keyHandler = new KeyHandler();
+ drawHelp = new DrawHelp();
 }
 
 void draw() 
@@ -38,6 +41,7 @@ void draw()
  if (c >= 270)  c=0;  else  c++;
  if (timeout > 0) timeout--;
  drawCall();
+ if (helpMe) drawHelp.draw();
 }
 
 void drawCall() 

@@ -1,9 +1,14 @@
+import static java.awt.event.KeyEvent.*;
 class KeyHandler
 {
   void call()
   {
     switch (key) 
     {
+      case VK_F1:
+      {
+        
+      }
       case '+':
       {
         if (corners < 8)
