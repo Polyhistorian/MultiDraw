@@ -28,7 +28,6 @@ class DrawSquare {
       j-=separation+10;
       i-=separation+10;
     }
-    return;
   }
 
   void drawLines(float xPoint, float yPoint) 

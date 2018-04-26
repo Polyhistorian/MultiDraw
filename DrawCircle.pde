@@ -35,7 +35,6 @@ class DrawCircle {
       }
       paired = !paired;
       j-=separation;
-    }
-    return; //<>//
+    } //<>//
   }
 }

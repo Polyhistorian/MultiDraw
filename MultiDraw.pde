@@ -4,7 +4,7 @@ boolean drawOnly = true;
 boolean drawSphereBool = false;
 int a = 64;
 int c = 0;
-int corners = 4;
+int corners = 8;
 int timeout = 0;
 DrawOctagon drawOctagon;
 DrawHeptagon drawHeptagon;
@@ -56,11 +56,15 @@ void drawCall()
         break;
       }
       case 4:
+      {
         drawSquare.draw();
         break;
+      }
       case 5:
+      {
         drawPentagon.draw();
         break;
+      }
       case 6:
       {
         drawHexagon.draw();

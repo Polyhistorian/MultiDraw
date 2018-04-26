@@ -29,7 +29,6 @@ class DrawHexagon {
       j-=kerroinX+40;
       i-=kerroinY*2;
     }
-    return;
   }
 
   void drawLines(float xPoint, float yPoint) 

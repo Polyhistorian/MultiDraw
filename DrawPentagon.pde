@@ -7,8 +7,7 @@ class DrawPentagon {
   {
     fill(c, 255, 255, 255);
     text("Pentagons not yet available", width/2, height/2);
-    noFill();
-    return; /*
+    noFill(); /*
     float j = width;
     float jRepeat = 0f-kerroinX;
     boolean paired = false;
