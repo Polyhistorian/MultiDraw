@@ -1,87 +1,62 @@
-float distance = 50f;
-float separation = 40f;
-boolean drawOnly = true;
-boolean drawSphereBool = false;
-boolean helpMe = false;
-int a = 64;
-int c = 0;
-int corners = 8;
-int timeout = 0;
-DrawOctagon drawOctagon;
-DrawHeptagon drawHeptagon;
-DrawHexagon drawHexagon;
-DrawPentagon drawPentagon;
-DrawSquare drawSquare;
-DrawTriangle drawTriangle;
-DrawCircle drawCircle;
-KeyHandler keyHandler;
-DrawHelp drawHelp;
+VariableHandler variableHandler = new VariableHandler();;
 
 void setup() 
 {
  size(1270, 720);
  colorMode(HSB);
  background(240, 24.14, 11.37);
- drawOctagon = new DrawOctagon();
- drawHeptagon = new DrawHeptagon();
- drawHexagon = new DrawHexagon();
- drawPentagon = new DrawPentagon();
- drawSquare = new DrawSquare();
- drawTriangle = new DrawTriangle();
- drawCircle = new DrawCircle();
- keyHandler = new KeyHandler();
- drawHelp = new DrawHelp();
+ variableHandler.setup();
 }
 
 void draw() 
 {
  noStroke();
- fill(240, 24.14, 11.37, a);
+ fill(240, 24.14, 11.37, variableHandler.a);
  rect(0, 0, width, height);
- if (c >= 270)  c=0;  else  c++;
- if (timeout > 0) timeout--;
+ if (variableHandler.c >= 270)  variableHandler.c=0;  else  variableHandler.c++;
+ if (variableHandler.timeout > 0) variableHandler.timeout--;
  drawCall();
- if (helpMe) drawHelp.draw();
+ if (variableHandler.drawHelpBool) variableHandler.drawHelp.draw();
 }
 
 void drawCall() 
 {
-  if (drawSphereBool)
+  if (variableHandler.drawSphereBool)
   {
-    drawCircle.draw();
+    variableHandler.drawCircle.draw();
   }
   else 
   {
-    switch (corners) 
+    switch (variableHandler.corners) 
     {
       case 3:
       {
-        drawTriangle.draw();
+        variableHandler.drawTriangle.draw();
         break;
       }
       case 4:
       {
-        drawSquare.draw();
+        variableHandler.drawSquare.draw();
         break;
       }
       case 5:
       {
-        drawPentagon.draw();
+        variableHandler.drawPentagon.draw();
         break;
       }
       case 6:
       {
-        drawHexagon.draw();
+        variableHandler.drawHexagon.draw();
         break;
       }
       case 7:
       {
-        drawHeptagon.draw();
+        variableHandler.drawHeptagon.draw();
         break;
       }
       case 8:
       {
-        drawOctagon.draw();
+        variableHandler.drawOctagon.draw();
         break;
       }
     }
@@ -90,5 +65,5 @@ void drawCall()
 
 void keyPressed() 
 {
-  keyHandler.call();
+  variableHandler.keyHandler.call();
 }

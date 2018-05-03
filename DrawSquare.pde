@@ -25,30 +25,30 @@ class DrawSquare {
         }
       }
       paired = !paired;
-      j-=separation+10;
-      i-=separation+10;
+      j-=variableHandler.separation+10;
+      i-=variableHandler.separation+10;
     }
   }
 
   void drawLines(float xPoint, float yPoint) 
   {
     noFill();
-    stroke(c, 255, 255, 255);
-    if (drawOnly) 
+    stroke(variableHandler.c, 255, 255, 255);
+    if (variableHandler.drawOnly) 
     {
-      if (dist(xPoint, yPoint, mouseX, mouseY) <= distance || dist(xPoint+40, yPoint, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint, xPoint+40, yPoint);
       }
-      if (dist(xPoint, yPoint, mouseX, mouseY) <= distance || dist(xPoint, yPoint+40, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint, xPoint, yPoint+40);
       }
-      if (dist(xPoint+40, yPoint, mouseX, mouseY) <= distance || dist(xPoint+40, yPoint+40, mouseX, mouseY) <= distance) 
+      if (dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint+40, yPoint, xPoint+40, yPoint+40);
       }
-      if (dist(xPoint, yPoint+40, mouseX, mouseY) <= distance || dist(xPoint+40, yPoint, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint+40, xPoint+40, yPoint+40);
       }

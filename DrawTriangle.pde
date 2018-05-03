@@ -5,7 +5,7 @@ class DrawTriangle {
 
   void draw() 
   {
-    fill(c, 255, 255, 255);
+    fill(variableHandler.c, 255, 255, 255);
     text("Tirangles not yet available", width/2, height/2);
     noFill(); /*
     float j = width;
@@ -38,18 +38,18 @@ class DrawTriangle {
   void drawLines(float xPoint, float yPoint) 
   {
     noFill();
-    stroke(c, 255, 255, 255);
-    if (drawOnly) 
+    stroke(variableHandler.c, 255, 255, 255);
+    if (variableHandler.drawOnly) 
     {
-      if (dist(xPoint, yPoint, mouseX, mouseY) <= distance || dist(xPoint-40, yPoint, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint-40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint, xPoint-40, yPoint);
       }
-      if (dist(xPoint, yPoint, mouseX, mouseY) <= distance || dist(xPoint+kerroinX, yPoint+kerroinY, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+kerroinX, yPoint+kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint, xPoint+kerroinX, yPoint+kerroinY);
       }
-      if (dist(xPoint, yPoint, mouseX, mouseY) <= distance || dist(xPoint+kerroinX, yPoint-kerroinY, mouseX, mouseY) <= distance) 
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+kerroinX, yPoint-kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
         line(xPoint, yPoint, xPoint+kerroinX, yPoint-kerroinY);
       }

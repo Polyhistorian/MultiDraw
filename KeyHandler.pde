@@ -7,15 +7,15 @@ class KeyHandler
     {
       case VK_F1:
       {
-        
+        variableHandler.drawHelpBool = !variableHandler.drawHelpBool;
       }
       case '+':
       {
-        if (corners < 8)
+        if (variableHandler.corners < 8)
         {
-          distance = 50f;
-          separation = 40f;
-          corners++;
+          variableHandler.mouseDistance = 50f;
+          variableHandler.separation = 40f;
+          variableHandler.corners++;
           return;
         }
         else
@@ -25,11 +25,11 @@ class KeyHandler
       }
       case '-':
       {
-        if (corners > 3)
+        if (variableHandler.corners > 3)
         {
-          distance = 50f;
-          separation = 40f;
-          corners--;
+          variableHandler.mouseDistance = 50f;
+          variableHandler.separation = 40f;
+          variableHandler.corners--;
           return;
         }
         else
@@ -39,11 +39,11 @@ class KeyHandler
       }
       case 'd':
       {
-        if (timeout == 0)
+        if (variableHandler.timeout == 0)
         {
-          distance = 50f;
-          separation = 40f;
-          drawSphereBool = !drawSphereBool;
+          variableHandler.mouseDistance = 50f;
+          variableHandler.separation = 40f;
+          variableHandler.drawSphereBool = !variableHandler.drawSphereBool;
           return;
         }
         else
@@ -53,14 +53,14 @@ class KeyHandler
       }
       case 'i':
       {
-        if (!drawOnly) 
+        if (!variableHandler.drawOnly) 
         {
-          drawOnly = true;
+          variableHandler.drawOnly = true;
           return;
         }
-        else if (width > distance) 
+        else if (width > variableHandler.mouseDistance) 
         {
-          distance += 10f;
+          variableHandler.mouseDistance += 10f;
           return;
         }
         else 
@@ -70,9 +70,9 @@ class KeyHandler
       }
       case 'j':
       {
-        if (separation >= 5f)
+        if (variableHandler.separation >= 5f)
         {
-          separation -= 5f;
+          variableHandler.separation -= 5f;
           return;
         }
         else
@@ -82,26 +82,26 @@ class KeyHandler
       }
       case 'k':
       {
-        separation += 5f;
+        variableHandler.separation += 5f;
         return;
       }
       case 'm':
       {
-        if (a >= 240)
+        if (variableHandler.a >= 240)
         {
           return;
         }
         else
         {
-          a += 16;
+          variableHandler.a += 16;
           return;
         }
       }
       case 'n':
       {
-        if (a >= 16)
+        if (variableHandler.a >= 16)
         {
-          a -= 16;
+          variableHandler.a -= 16;
           return;
         }
         else
@@ -111,20 +111,20 @@ class KeyHandler
       }
       case 'r':
       {
-          distance = 50f;
-          separation = 40f;
-          corners = 6;
+          variableHandler.mouseDistance = 50f;
+          variableHandler.separation = 40f;
+          variableHandler.corners = 6;
       }
       case 'u': 
       {
-        if (distance >= 20f) 
+        if (variableHandler.mouseDistance >= 20f) 
         {
-          distance -= 10f;
+          variableHandler.mouseDistance -= 10f;
           return;
         }
-        else if (distance == 10f) 
+        else if (variableHandler.mouseDistance == 10f) 
         {
-          drawOnly = false;
+          variableHandler.drawOnly = false;
           return;
         }
         else 

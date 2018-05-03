@@ -6,7 +6,7 @@ class DrawCircle {
   void draw() 
   {
     noFill();
-    stroke(c, 255, 255, 255);
+    stroke(variableHandler.c, 255, 255, 255);
     float j = width;
     float jRepeat = 0f-kerroinX;
     boolean paired = false;
@@ -18,23 +18,23 @@ class DrawCircle {
       {
         if (paired)
         {
-          if (dist(j, i, mouseX, mouseY) <= distance)
+          if (dist(j, i, mouseX, mouseY) <= variableHandler.mouseDistance)
           {
-            ellipse(j, i, kerroinX, kerroinY);
+            ellipse(j, i, variableHandler.size, variableHandler.size);
           }
-          i-=separation*2;
+          i-=variableHandler.separation*2;
         }
         else
         {
-          if (dist(j, i-kerroinY, mouseX, mouseY) <= distance)
+          if (dist(j, i-kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance)
           {
-            ellipse(j, i-kerroinY, kerroinX, kerroinY);
+            ellipse(j, i-kerroinY, variableHandler.size, variableHandler.size);
           }
-          i-=separation*2;
+          i-=variableHandler.separation*2;
         }
       }
       paired = !paired;
-      j-=separation;
+      j-=variableHandler.separation;
     } //<>//
   }
 }
