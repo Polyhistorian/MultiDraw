@@ -1,6 +1,6 @@
 class LinePoints
 {
- void draw(float xStart, float yStart, float xEnd, float yEnd) //<>//
+ void draw(float xStart, float yStart, float xEnd, float yEnd)
  {
    if (xStart > xEnd)
    {
@@ -53,39 +53,59 @@ class LinePoints
  
  void pospos(float xStart, float yStart, float xEnd, float yEnd)
  {
-  while (xStart >= xEnd) //<>//
+  float pointDistance = dist(xStart, yStart, xEnd, yEnd);
+  float rounds = 0;
+  while (rounds <= pointDistance)
   {
-    break;
+    float xPoint = map(rounds, 0, pointDistance, xStart, xEnd);
+    float yPoint = map(rounds, 0, pointDistance, yStart, yEnd);
+    point(xPoint, yPoint);
+    rounds++;
   }
  }
  
  void posneg(float xStart, float yStart, float xEnd, float yEnd)
  {
-   while (xStart >= xEnd) //<>//
+   float pointDistance = dist(xStart, yStart, xEnd, yEnd);
+   float rounds = 0;
+   while (rounds <= pointDistance)
    {
-    break;
+     float xPoint = map(rounds, 0, pointDistance, xStart, xEnd);
+     float yPoint = map(rounds, 0, pointDistance, yStart, yEnd);
+     point(xPoint, yPoint);
+     rounds++;
    }
  }
  
  void negpos(float xStart, float yStart, float xEnd, float yEnd)
  {
-   while (xStart <= xEnd) //<>//
+   float pointDistance = dist(xStart, yStart, xEnd, yEnd);
+   float rounds = 0;
+   while (rounds <= pointDistance)
    {
-    break;
+     float xPoint = map(rounds, 0, pointDistance, xStart, xEnd);
+     float yPoint = map(rounds, 0, pointDistance, yStart, yEnd);
+     point(xPoint, yPoint);
+     rounds++;
    }
  }
  
  void negneg(float xStart, float yStart, float xEnd, float yEnd)
  {
-   while (xStart <= xEnd) //<>//
+   float pointDistance = dist(xStart, yStart, xEnd, yEnd);
+   float rounds = 0;
+   while (rounds <= pointDistance)
    {
-    break;
+     float xPoint = map(rounds, 0, pointDistance, xStart, xEnd);
+     float yPoint = map(rounds, 0, pointDistance, yStart, yEnd);
+     point(xPoint, yPoint);
+     rounds++;
    }
  }
  void eqpos(float xStart, float yStart, float xEnd, float yEnd)
  {
    float yCurrent = yStart;
-   while (yCurrent >= yEnd) //<>//
+   while (yCurrent >= yEnd)
    {
      point(xStart, yCurrent);
      yCurrent--;

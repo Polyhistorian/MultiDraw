@@ -44,6 +44,7 @@ class KeyHandler
           variableHandler.mouseDistance = 50f;
           variableHandler.separation = 40f;
           variableHandler.drawSphereBool = !variableHandler.drawSphereBool;
+          variableHandler.timeout += 10;
           return;
         }
         else
@@ -108,6 +109,19 @@ class KeyHandler
         {
           return;
         } 
+      }
+      case 'o':
+      {
+        if (variableHandler.timeout == 0)
+        {
+          variableHandler.drawPoints = !variableHandler.drawPoints;
+          variableHandler.timeout += 10;
+          return;
+        }
+        else
+        {
+          return; 
+        }
       }
       case 'r':
       {

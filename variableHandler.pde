@@ -6,6 +6,7 @@ class VariableHandler
   boolean drawOnly = true;
   boolean drawSphereBool = false;
   boolean drawHelpBool = false;
+  boolean drawPoints = false;
   int a = 64;
   int c = 0;
   int corners = 8;
