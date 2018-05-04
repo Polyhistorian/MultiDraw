@@ -39,22 +39,22 @@ class DrawHexagon {
     {
       if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint-40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
-        line(xPoint, yPoint, xPoint-40, yPoint);
+        variableHandler.linePoints.draw(xPoint, yPoint, xPoint-40, yPoint); //<>//
       }
       if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+kerroinX, yPoint+kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
-        line(xPoint, yPoint, xPoint+kerroinX, yPoint+kerroinY);
+        variableHandler.linePoints.draw(xPoint, yPoint, xPoint+kerroinX, yPoint+kerroinY); //<>//
       }
       if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+kerroinX, yPoint-kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance) 
       {
-        line(xPoint, yPoint, xPoint+kerroinX, yPoint-kerroinY);
+        variableHandler.linePoints.draw(xPoint, yPoint, xPoint+kerroinX, yPoint-kerroinY); //<>//
       }
     }
     else 
     {
-      line(xPoint, yPoint, xPoint-40, yPoint);
-      line(xPoint, yPoint, xPoint+kerroinX, yPoint+kerroinY);
-      line(xPoint, yPoint, xPoint+kerroinX, yPoint-kerroinY);
+      variableHandler.linePoints.draw(xPoint, yPoint, xPoint-40, yPoint); //<>//
+      variableHandler.linePoints.draw(xPoint, yPoint, xPoint+kerroinX, yPoint+kerroinY);
+      variableHandler.linePoints.draw(xPoint, yPoint, xPoint+kerroinX, yPoint-kerroinY);
     }
     
     return;

@@ -19,6 +19,7 @@ class VariableHandler
   DrawCircle drawCircle;
   KeyHandler keyHandler;
   DrawHelp drawHelp;
+  LinePoints linePoints;
 
   void setup() 
   {
@@ -31,5 +32,6 @@ class VariableHandler
     drawCircle = new DrawCircle();
     keyHandler = new KeyHandler();
     drawHelp = new DrawHelp();
+    linePoints = new LinePoints();
   }
 }
