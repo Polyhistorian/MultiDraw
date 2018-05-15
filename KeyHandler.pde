@@ -1,14 +1,9 @@
-import static java.awt.event.KeyEvent.*;
 class KeyHandler
 {
   void call()
   {
     switch (key) 
     {
-      case VK_F1:
-      {
-        variableHandler.drawHelpBool = !variableHandler.drawHelpBool;
-      }
       case '+':
       {
         if (variableHandler.corners < 8)
@@ -44,6 +39,19 @@ class KeyHandler
           variableHandler.mouseDistance = 50f;
           variableHandler.separation = 40f;
           variableHandler.drawSphereBool = !variableHandler.drawSphereBool;
+          variableHandler.timeout += 10;
+          return;
+        }
+        else
+        {
+          return; 
+        }
+      }
+      case 'h':
+      {
+        if (variableHandler.timeout == 0)
+        {
+          variableHandler.drawHelpBool = !variableHandler.drawHelpBool;
           variableHandler.timeout += 10;
           return;
         }
