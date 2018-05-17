@@ -15,13 +15,21 @@ class DrawSquare {
       {
         if (paired)
         { 
-          if (variableHandler.drawPoints) drawPoints(j, i);
+          if (variableHandler.drawPoints)
+          {
+            if (variableHandler.drawNoise) drawPointsNoise(j, i);
+            else drawPoints(j, i);
+          }
           else drawLines(j, i);
           i-=kerroinY*2;
         }
         else
         {
-          if (variableHandler.drawPoints) drawPoints(j, i-kerroinY);
+          if (variableHandler.drawPoints) 
+          {
+            if (variableHandler.drawNoise) drawPointsNoise(j, i-kerroinY);
+            else drawPoints(j, i-kerroinY);
+          }
           else drawLines(j, i-kerroinY);
           i-=kerroinY*2;
         }
@@ -93,6 +101,37 @@ class DrawSquare {
       line(xPoint, yPoint, xPoint, yPoint+40);
       line(xPoint+40, yPoint, xPoint+40, yPoint+40);
       line(xPoint, yPoint+40, xPoint+40, yPoint+40);
+    }
+  }
+  void drawPointsNoise(float xPoint, float yPoint) 
+  {
+    noFill();
+    stroke(variableHandler.c, 255, 255, 255);
+    if (variableHandler.drawOnly) 
+    {
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
+      {
+        variableHandler.linePointsNoise.draw(xPoint, yPoint, xPoint+40, yPoint);
+      }
+      if (dist(xPoint, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance) 
+      {
+        variableHandler.linePointsNoise.draw(xPoint, yPoint, xPoint, yPoint+40);
+      }
+      if (dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance) 
+      {
+        variableHandler.linePointsNoise.draw(xPoint+40, yPoint, xPoint+40, yPoint+40);
+      }
+      if (dist(xPoint, yPoint+40, mouseX, mouseY) <= variableHandler.mouseDistance || dist(xPoint+40, yPoint, mouseX, mouseY) <= variableHandler.mouseDistance) 
+      {
+        variableHandler.linePointsNoise.draw(xPoint, yPoint+40, xPoint+40, yPoint+40);
+      }
+    }
+    else 
+    {
+      variableHandler.linePointsNoise.draw(xPoint, yPoint, xPoint+40, yPoint);
+      variableHandler.linePointsNoise.draw(xPoint, yPoint, xPoint, yPoint+40);
+      variableHandler.linePointsNoise.draw(xPoint+40, yPoint, xPoint+40, yPoint+40);
+      variableHandler.linePointsNoise.draw(xPoint, yPoint+40, xPoint+40, yPoint+40);
     }
   }
 }

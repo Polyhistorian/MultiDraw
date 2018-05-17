@@ -6,7 +6,8 @@ class VariableHandler
   boolean drawOnly = true;
   boolean drawSphereBool = false;
   boolean drawHelpBool = false;
-  boolean drawPoints = false;
+  boolean drawPoints = true;
+  boolean drawNoise = true;
   int a = 64;
   int c = 0;
   int corners = 8;
@@ -21,6 +22,7 @@ class VariableHandler
   KeyHandler keyHandler;
   DrawHelp drawHelp;
   LinePoints linePoints;
+  LinePointsNoise linePointsNoise;
 
   void setup() 
   {
@@ -34,5 +36,6 @@ class VariableHandler
     keyHandler = new KeyHandler();
     drawHelp = new DrawHelp();
     linePoints = new LinePoints();
+    linePointsNoise = new LinePointsNoise();
   }
 }
