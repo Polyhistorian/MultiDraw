@@ -94,6 +94,19 @@ class KeyHandler
         variableHandler.separation += 5f;
         return;
       }
+      case 'l':
+      {
+        if (variableHandler.timeout == 0)
+        {
+          variableHandler.drawNoise = !variableHandler.drawNoise;
+          variableHandler.timeout += 10;
+          return;
+        }
+        else
+        {
+          return; 
+        }
+      }
       case 'm':
       {
         if (variableHandler.a >= 240)

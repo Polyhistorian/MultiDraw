@@ -15,8 +15,8 @@ void draw()
  rect(0, 0, width, height);
  if (variableHandler.c >= 270)  variableHandler.c=0;  else  variableHandler.c++;
  if (variableHandler.timeout > 0) variableHandler.timeout--;
- drawCall();
  if (variableHandler.drawHelpBool) variableHandler.drawHelp.draw();
+ else drawCall();
 }
 
 void drawCall() 
