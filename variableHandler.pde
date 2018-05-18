@@ -23,6 +23,8 @@ class VariableHandler
   DrawHelp drawHelp;
   LinePoints linePoints;
   LinePointsNoise linePointsNoise;
+  CirclePoints circlePoints;
+  CirclePointsNoise circlePointsNoise;
 
   void setup() 
   {
@@ -37,5 +39,7 @@ class VariableHandler
     drawHelp = new DrawHelp();
     linePoints = new LinePoints();
     linePointsNoise = new LinePointsNoise();
+    circlePoints = new CirclePoints();
+    circlePointsNoise = new CirclePointsNoise();
   }
 }
