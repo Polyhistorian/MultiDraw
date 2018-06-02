@@ -1,4 +1,6 @@
 class CirclePointsNoise
 {
-  
+  /////////////
+  //Emptiness//
+  /////////////
 }

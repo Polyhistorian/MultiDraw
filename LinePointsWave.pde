@@ -1,5 +1,9 @@
 class LinePointsWave
 {
+  /////////////////////////////////
+  //Ei ole ollenkaan implementoitu/
+  /////////////////////////////////
+  
   int[] CurrentDraw_xPoint;
   int[] CurrentDraw_yPoint;
   int[] LastDraw_xPoint;

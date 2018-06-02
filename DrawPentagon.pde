@@ -1,10 +1,12 @@
 class DrawPentagon {
+  //"Kulmakerroimen" laskeminen, mutta kuusikulmiolle, joten ei mtn hajua miksi se on tässä...
   float kerroinX = ((4*sqrt(65))/13)*8;
   float kerroinY = ((4*sqrt(65))/13)*14;
 
 
   void draw() 
   {
+    //Todetaan, että en ole jaksanut bruteforcata koodia ja en ole keksinyt hyvää tapaa tehdä tätä...
     fill(variableHandler.c, 255, 255, 255);
     text("Pentagons not yet available", width/2, height/2);
     noFill(); /*
@@ -35,6 +37,10 @@ class DrawPentagon {
     return; */
   }
 
+
+  ///////////////
+  //Ei käytössä//
+  ///////////////
   void drawLines(float xPoint, float yPoint) 
   {
     noFill();

@@ -1,18 +1,19 @@
 class VariableHandler
 {
-  float mouseDistance = 50f;
-  float separation = 40f;
-  float size = 40;
-  boolean drawOnly = true;
-  boolean drawSphereBool = false;
-  boolean drawHelpBool = false;
-  boolean drawPoints = true;
-  boolean drawNoise = true;
-  boolean drawWave = true;
-  int a = 64;
-  int c = 0;
-  int corners = 8;
-  int timeout = 0;
+  float mouseDistance = 50f; //"Piirtoetäisyys"
+  float separation = 40f; //Muotojen väli
+  float size = 40; //Lopulta oikeastaan käyttämättömäksi jäänyt arvo, jonka oli tarkoitus hallita muotojen suuruutta
+  boolean drawOnly = true; //"Fullscreen" vai "Piirtoetäisyys", true == "piirtoetäisyys", false == "fullscreen"
+  boolean drawSphereBool = false; //Piirretäänkö ympyröitä, jos ei niin muita muotoja
+  boolean drawHelpBool = false; //Piirretäänkö apu ikkunaa, jos ei niin muotoja
+  boolean drawPoints = true; //Piirretäänkö pisteittäin
+  boolean drawNoise = true; //Piirretäänkö noisella
+  boolean drawWave = true; //Piirretäänkö alloitain _!Ei implementoitu!_
+  int a = 64; //Alpha arvo
+  int c = 0; //Väri arvo
+  int corners = 8; //Kulmien määrä
+  int timeout = 0; //Timeout, jos on sellainen
+  // Erilliset logiikka "piirien" ja piirtämistyökalujen referenssit 
   DrawOctagon drawOctagon;
   DrawHeptagon drawHeptagon;
   DrawHexagon drawHexagon;
@@ -30,6 +31,7 @@ class VariableHandler
 
   void setup() 
   {
+    //Uusitaan äsken määritetyt referenssit, tarvitsee kutsua vain kerran
     drawOctagon = new DrawOctagon();
     drawHeptagon = new DrawHeptagon();
     drawHexagon = new DrawHexagon();

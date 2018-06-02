@@ -1,5 +1,9 @@
 class CirclePoints
 {
+  //////////////////////////////////////////////////////////
+  // Ei oikeastaan toimi, mutta itse koodissa ei ole vikaa//
+  //////////////////////////////////////////////////////////
+  
   void draw(float x, float y, float radius)
   {
     if (radius > 0)
