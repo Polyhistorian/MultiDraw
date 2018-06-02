@@ -8,6 +8,7 @@ class VariableHandler
   boolean drawHelpBool = false;
   boolean drawPoints = true;
   boolean drawNoise = true;
+  boolean drawWave = true;
   int a = 64;
   int c = 0;
   int corners = 8;
@@ -23,6 +24,7 @@ class VariableHandler
   DrawHelp drawHelp;
   LinePoints linePoints;
   LinePointsNoise linePointsNoise;
+  LinePointsWave linePointsWave;
   CirclePoints circlePoints;
   CirclePointsNoise circlePointsNoise;
 
@@ -39,6 +41,7 @@ class VariableHandler
     drawHelp = new DrawHelp();
     linePoints = new LinePoints();
     linePointsNoise = new LinePointsNoise();
+    linePointsWave = new LinePointsWave();
     circlePoints = new CirclePoints();
     circlePointsNoise = new CirclePointsNoise();
   }

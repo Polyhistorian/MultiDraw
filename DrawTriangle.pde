@@ -6,7 +6,7 @@ class DrawTriangle {
   void draw() 
   {
     fill(variableHandler.c, 255, 255, 255);
-    text("Tirangles not yet available", width/2, height/2);
+    text("Trirangles not yet available", width/2, height/2);
     noFill(); /*
     float j = width;
     float jRepeat = 0f-kerroinX;

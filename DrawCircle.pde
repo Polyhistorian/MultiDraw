@@ -20,7 +20,8 @@ class DrawCircle {
         {
           if (dist(j, i, mouseX, mouseY) <= variableHandler.mouseDistance)
           {
-            ellipse(j, i, variableHandler.size, variableHandler.size);
+            if(variableHandler.drawNoise) variableHandler.circlePoints.draw(j, i, variableHandler.size);
+            else ellipse(j, i, variableHandler.size, variableHandler.size);
           }
           i-=variableHandler.separation*2;
         }
@@ -28,7 +29,8 @@ class DrawCircle {
         {
           if (dist(j, i-kerroinY, mouseX, mouseY) <= variableHandler.mouseDistance)
           {
-            ellipse(j, i-kerroinY, variableHandler.size, variableHandler.size);
+            if(variableHandler.drawNoise) variableHandler.circlePoints.draw(j, i-kerroinY, variableHandler.size);
+            else ellipse(j, i-kerroinY, variableHandler.size, variableHandler.size);
           }
           i-=variableHandler.separation*2;
         }

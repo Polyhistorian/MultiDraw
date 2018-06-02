@@ -167,6 +167,19 @@ class KeyHandler
           return;
         }
       }
+      case 'w':
+      {
+        if (variableHandler.timeout == 0)
+        {
+          variableHandler.drawWave = !variableHandler.drawWave;
+          variableHandler.timeout += 10;
+          return;
+        }
+        else
+        {
+          return; 
+        }
+      }
     }
   }
 }
